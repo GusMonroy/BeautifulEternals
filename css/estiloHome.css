@@ -1,0 +1,833 @@
+:root{
+    --read:#ff2e63;
+    --black:#252a34;
+    --blue: #03a9f4 ;
+    --white:#eaeaea;
+
+
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background: rgb(208,228,238);
+    background: linear-gradient(180deg, rgba(208,228,238,1) 13%, rgba(149,210,244,1) 39%, rgba(184,124,215,1) 100%); 
+    overflow-x: hidden;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+/*Boton de ir arriba
+.go-top{
+    position:fixed;
+    bottom: 100px;
+    right: -100%;
+    width: 50px;
+    height: 50px;
+    border:2px solid var(--blue);
+    background: #fff;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 400ms;
+}
+.go-top:hover{
+    border:2px solid var(--white);
+    background: var(--blue);
+}
+.go-top:hover span{
+    color: var(--white);
+}
+.go-top > span{
+    font-size: 30px;
+    color: var(--black);
+}
+*/
+/* skew 
+.skew-abajo{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 10vh 100vw;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.skew-arriba{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 8vh 100vw 0 0;
+    border-style: solid;
+    border-color:#fff transparent transparent transparent;
+    z-index: 10;
+}
+*/
+
+
+/** Menu de navegacion**/
+#header{
+    position: relative;
+    width: 100%;
+}
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgb(238,238,238);
+    background: linear-gradient(125deg, rgba(238,238,238,1) 23%, rgba(228,201,245,1) 53%, rgba(171,198,226,1) 81%); 
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+/*diseño del logotipo*/
+.menu .logo-box{
+    margin-left: 30px;
+}
+
+.menu .logo-box img{ /*Dimenciones del logo del Nav*/
+    width: 120px;
+    height: 60px;
+}
+.menu .logo-box h1 a{
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: 400;
+    /*mandamos a llamamr a la variable --black*/
+    color: var(--black);
+}
+/*modificamos los botones de navegacion*/
+.menu .list-container{
+    margin-right: 20px;
+}
+.menu .list-container .lists{
+    display: flex;
+}
+.menu .list-container .lists li{
+    list-style: none;
+}
+.menu .list-container .lists li a{
+    text-decoration: none;
+    margin: 0px 10px;
+    padding: 8px;
+    color: var(--black);
+    border-radius: 24px;
+    font-size: 16px;
+    transition: 0.1s;
+}
+
+/*Efecto de botones*/
+.menu .list-container .lists li a.activo{
+    background: rgb(238,238,238);
+    background: linear-gradient(125deg, rgba(238,238,238,1) 0%, rgba(189,133,224,1) 0%, rgba(101,160,221,1) 56%);
+    color:#fff;
+}
+.menu .list-container .lists li a:hover{
+    background: rgb(238,238,238);
+    background: linear-gradient(125deg, rgba(238,238,238,1) 0%, rgba(189,133,224,1) 0%, rgba(124,169,215,1) 100%);
+    color:#fff;
+}
+
+/*Boton barra desplegable*/
+.btn-menu > .fa-bars{
+    display: none;
+    color: #03a9f4;
+} 
+
+
+
+/**menu de navegacion 2**/
+/*IMG HEADER*/
+.img-header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(/imagenes/0fbaeefa-0d38-43c8-9716-1330ef933fb3.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.img-header .welcome{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img-header .welcome h1{
+    font-size: 50px;
+    color: #fff;
+    font-weight: 200;
+}
+
+.img-header .welcome hr{
+    width: 400px;
+    height: 2px;
+    background: #fff;
+    border: none;
+    margin-top: 5px;
+}
+
+.img-header .welcome p{
+    font-size: 20px;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.img-header .welcome > button{
+    width: 170px;
+    height: 40px;
+    background: rgb(238,238,238);
+    background: linear-gradient(125deg, rgba(238,238,238,1) 0%, rgba(189,133,224,1) 0%, rgba(101,160,221,1) 56%);
+    border-radius: 24px;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color:#fff;
+    text-align: center;
+    margin-top: 20px;
+    cursor:pointer;
+    transition: 0.5s;
+}
+.img-header .welcome >button:hover{
+    background: rgb(238,238,238);
+    background: linear-gradient(125deg, rgba(238,238,238,1) 0%, rgba(189,133,224,1) 0%, rgba(124,169,215,1) 100%);  
+}
+
+/*boton de busqueda
+.menu .container-fluid .d-flex >button{
+    text-decoration: none;
+    margin: 0px 10px;
+    padding: 8px;
+    border-radius: 24px;
+    font-size: 16px;
+    transition: 0.3s;
+
+}
+*/
+
+/*Acerca de Nosotros*/
+.acerca-de{
+    width: 100%;
+    margin-top: 120px;
+
+}
+.acerca-de .Info-container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.acerca-de .Info-container h1{
+    font-size: 50px;
+    font-weight: 400;
+    color: var(--black);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.acerca-de .Info-container p{
+    text-align: center;
+    font-size: 17px;
+    color: var(--black);
+    line-height: 35px;
+    margin: 10px opx;
+}
+
+.acerca-de .Info-container .about-gallery{
+    width: 100%;
+    /*display flex para poner imagenes horizontal*/
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px;
+}
+/*Acomodar imagenes en espacios*/
+.acerca-de .Info-container .about-gallery img{
+   width: calc(33.33% -10px);
+   height: 300px;
+   object-fit: cover;
+   margin: 15px 30px;
+   cursor: pointer; 
+}
+
+.acerca-de .Info-container .about-more{
+    width: 100%;
+    display: flex;
+    margin: auto;
+
+}
+
+/*diseño de boton*/
+.acerca-de .Info-container .about-more button{
+    width: 120px;
+    height: 40px;
+    background: rgb(238,238,238);
+    background: linear-gradient(125deg, rgba(238,238,238,1) 0%, rgba(189,133,224,1) 0%, rgba(101,160,221,1) 56%);
+    color:#fff;
+    border-radius: 24px;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color:#fff;
+    text-align: center;
+    margin-top: 20px;
+    cursor:pointer;
+    transition: 0.5s;
+}
+/*Efecto hover botton*/
+.acerca-de .Info-container .about-more button:hover{
+    background: rgb(238,238,238);
+    background: linear-gradient(125deg, rgba(238,238,238,1) 0%, rgba(189,133,224,1) 0%, rgba(124,169,215,1) 100%); 
+}
+
+.acerca-de .mision-vision{
+    display: flex;
+    justify-content: space-between;
+}
+
+.acerca-de .mision-vision .mision{
+    text-align: center;
+    padding: 40px;
+}
+
+.acerca-de .mision-vision .vision{
+    text-align: center;
+    padding: 40px;
+}
+
+/*Nuestros productos*/
+.our-projects{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(/imagenes/imagen_banner1.jpg);
+    background-attachment: fixed; /*Congelar imagen de fondo*/
+    background-position:center;
+    background-size: cover;
+    margin-top: 100px;
+}
+
+/*ESTILOS DE GALERIA*/
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+
+    @media (min-width: 768px) {
+        .grid{
+            grid-template-columns: repeat(2, 1fr);
+           
+        }
+        
+    }
+}
+
+/*ESTILO DE TARJETAS*/
+.card{
+    width: 90%;
+    margin: 35px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgb(144,220,223);
+    background: linear-gradient(153deg, rgba(144,220,223,1) 40%, rgba(230,136,252,1) 100%); 
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    transition: all 400ms ease;
+    border: solid 2px #d668e3;
+}
+
+.card:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+.card img{
+    width: 100%;
+}
+
+.card .contenido{
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    
+}
+
+.card .contenido p{
+    line-height: 1.3;
+    color: #fff;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.card .contenido h2{
+    margin-bottom: 15px;
+    color: #a837f3;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.card .contenido a{
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #34495E ;
+    border: 2px solid #F3B637;
+    border-radius: 4px;
+    transition: all 400ms ease;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.card .contenido a:hover{
+    background-color: #fff;
+    color: #1B4F72;
+    
+}
+
+/*Degradar (Oscurecer) imagen de fondo*/
+.our-projects .deg-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+} 
+
+.our-projects .ejeZproject{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+} 
+
+.our-projects .container-proyect{
+    width: 90%;
+    margin: auto;
+    padding-top: 100px;
+}
+/*Se pone el diseño del titulo de productos*/
+.our-projects .container-proyect .project-title{
+    border:2px solid #fff;
+    padding: 10px;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+/*se pone el color y tamaño del texto*/
+.our-projects .container-proyect .project-title h2{
+    font-size: 40px;
+    color: #fff;
+    font-weight: normal;
+}
+/*se pone el color del titulo*/
+.our-projects .container-proyect .project-title hr{
+    background: #fff;
+    width: 50%;
+    margin: 10px auto;
+}
+/*modificamos las imagenes*/
+.our-projects .container-proyect .project-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    padding-bottom: 100px;
+}
+/*cambiamos la forma de la imagen*/
+.our-projects .container-proyect .project-img img{
+    width: calc(33% - 10px);
+    margin: 10px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+} 
+
+
+/*seccion de los comentarios*/
+.comentarios{
+    width: 100%;
+    margin-top: 120px;
+
+}
+/*Cambiar el estilo del nombre Usuario*/
+.comentarios-title{
+   width: 50%;
+   margin: auto;
+   text-align: center; 
+}
+/*Cambiar formato al texto del comentario*/
+.comentarios .comentarios-title h2{
+    font-size: 50px;
+    color: var(--black);
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+/*Cambiar color*/
+.comentarios .comentarios-title hr{
+    width: 90%;
+    margin: auto;
+    height: 2px;
+    background: var(--black);
+    border: none;
+} 
+/*Cuadro del comentario*/
+.comentarios .box-comentarios{
+    width: 90%;
+    margin: 80px auto;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/* */
+.comentarios .box-comentarios .card-comentario{
+    width: 45%;
+    margin: 20px;
+}
+
+.comentarios .box-comentarios .card-comentario .card-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comentarios .box-comentarios .card-comentario .card-img img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.comentarios .box-comentarios .card-comentario .comentario-text{
+    width: 100%;
+    border: 2px solid var(--blue);
+    margin-top: 30px;
+    padding:20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.comentarios .box-comentarios .card-comentario .comentario-text h4{
+    color: var(--read);
+    font-weight: normal;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: 200ms;
+}
+
+.comentarios .box-comentarios .card-comentario .comentario-text p{
+    font-size: 19px;
+    color: var(--black);
+    text-align: center;
+    line-height: 35px;
+    transition: 200ms;
+}
+
+.comentarios .box-comentarios .card-comentario .comentario-text:hover{
+    border: 2px solid ;
+    color: var(--read);
+} 
+
+.comentarios .box-comentarios .card-comentario .comentario-text:hover h4{
+    color: var(--blue);
+}
+
+/*Footer*/
+.footer{
+    position: relative;
+    width: 100%;
+    height: 170vh;
+    background: url(/imagenes/footer.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.footer .deg-footer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.footer .ejeZfooter{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.footer .footer-content{
+    width: 90%;
+    padding-top: 90px;;
+    margin: auto;
+}
+
+.footer .footer-content .footer-title{
+    width: 50%;
+    margin: auto;
+    border: 2px solid #fff;
+    padding: 15px;
+}
+
+.footer .footer-content .footer-title h2{
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.footer .footer-content .footer-title hr{
+    width: 80%;
+    margin:auto;
+}
+
+.footer .footer-content .formulario-content{
+    width: 60%;
+    background: #fff;
+    border-radius: 24px;
+    border: 2px solid var(--blue);
+    margin: 50px auto;
+    padding: 30px;
+    margin-bottom: 150px;
+}
+
+.footer .footer-content .formulario-content #Formulario{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer .footer-content .formulario-content #Formulario label{
+    text-align: center;
+    color: var(--black);
+    font-size: 22px;
+    margin: 30px 0px 10px 0px;
+}
+
+.footer .footer-content .formulario-content #Formulario input{
+    width: 90%;
+    margin: auto;
+    height: 40px;
+    border: 2px solid var(--blue);
+    border-radius: 24px;
+    outline: none;
+    text-align: center;
+    font-size: 17px;
+    color: var(--black);
+}
+
+.footer .footer-content .formulario-content #Formulario textarea{
+    width: 90%;
+    margin: auto;
+    height: 200px;
+    border: 2px solid var(--blue);
+    border-radius: 24px;
+    outline: none;
+    font-size: 15px;
+    color: var(--black);
+    padding: 20px;
+}
+
+.footer .footer-content .formulario-content #Formulario .send{
+    width: 100%;
+    display: flex;
+    margin: 40px 0px;
+    justify-content: center;
+}
+
+.footer .footer-content .formulario-content #Formulario .send button{
+    width: 150px;
+    height: 40px;
+    background: rgb(238,238,238);
+    background: linear-gradient(125deg, rgba(238,238,238,1) 0%, rgba(189,133,224,1) 0%, rgba(101,160,221,1) 56%);
+    border-radius: 24px;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.footer .footer-content .formulario-content #Formulario .send button:hover{
+    background: rgb(238,238,238);
+    background: linear-gradient(125deg, rgba(238,238,238,1) 0%, rgba(189,133,224,1) 0%, rgba(124,169,215,1) 100%);
+}
+.footer .footer-content .footer-text{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    border-top: 5px, solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .footer-content .footer-text p{
+    color: #fff;
+    font-size: 20px;
+}
+
+/*footer text*/ 
+
+/*Media Query- menu desplegable*/
+@media only screen and (max-width:900px){
+    .btn-menu > .fa-bars{
+        display: block;
+        position:absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 28px;
+        cursor: pointer;
+    }
+    .btn-menu > .fa-bars:hover{color:var(--read)}
+    .btn-menu.fa-times{color:var(--read)}
+    
+    .menu .list-container{
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: #fff;
+    }
+
+    .menu .list-container .lists{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-top: 5px solid var(--read);
+    }
+    
+    .menu .list-container .lists li{
+        width: 90%;
+        margin: 10px opx;
+        border-bottom: 1px solid var(--read);
+        text-align:  center;
+    }
+    
+    .menu .list-container .lists li a{
+        font-size: 25px;
+    }
+
+    .menu .list-container .lists li a.activo{
+        background: none;
+        color: var(--read);
+    }
+    
+    .menu .list-container .lists li a:hover{
+        background: none;
+        color:var(--read);
+    }
+}
+
+@media only screen and (max-width: 773px){
+    /* IMG header*/
+    .img-header .welcome h1{
+        font-size: 40px;
+    }
+    .img-header .welcome > button {
+        width: 130px;
+        font-size: 20px;
+    }
+    /* acerca de nosotros*/
+    .acerca-de .Info-container .about-gallery{
+        flex-direction: column;
+    }
+    .acerca-de .Info-container .about-gallery img{
+        width: 100%;
+    }
+
+    /* Nuestros productos*/
+    .our-projects .container-proyect .project-img img{
+        width: 80%;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 590px){
+    /* IMG header*/
+    .img-header .welcome h1{
+        font-size: 30px;
+    }
+
+    .img-header .welcome hr{
+        width: 100%;
+    }
+    .img-header .welcome p{
+        font-size: 17px;
+    }
+    .img-header .welcome > buttom {
+        width: 100px;
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 890px){
+    .comentarios .box-comentarios .card-comentario .card-img img{
+        width: 200px;
+        height: 200%;
+    }
+    .comentarios .box-comentarios .card-comentario{
+        width: 100%;
+    }
+    .comentarios .box-comentarios .card-comentario .comentario-text h4{
+        font-size: 25px;
+    }
+    .comentarios .box-comentarios .card-comentario .comentario-text p{
+        font-size: 17px;
+        line-height: 35px;
+    }
+}
+
+@media  only screen and (max-width: 900px) {
+    .footer .formulario-content{
+        width: 95%;
+        padding: 20px;
+    }
+    .footer .formulario-content #formulario input{
+        width: 100%;
+    }
+    .footer .formulario-content #formulario textarea{
+        width: 100%;
+    }
+    
+}
